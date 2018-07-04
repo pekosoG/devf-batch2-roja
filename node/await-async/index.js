@@ -1,4 +1,11 @@
 /**
+ *   COMENTEN CADA BLOQUE DE CODIGO 
+ *   PORQUE CAUSAN CONFLICTO LAS
+ *   FUNCIONES AL DEMOSTRAR EL FUNCIONAMIENTO
+ */
+
+
+/**
  * Primer ejemplo de código "sincrono"
  */
 console.log('this will fire first');
@@ -60,7 +67,7 @@ function wait(ms) {
         }, ms);
     });
 }
-
+/*
 //Pero aun así estamos 'encadenando' cada resultado con el anterior
 wait(300)
     .then(res => wait(500))
@@ -88,7 +95,6 @@ go();
  * Podemos incluso asignar el valor de nuestro return
  * a una varuable para usarlo posteriormente
  */
-function wait(ms) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(`waited for ${ms}ms`); //Aqui cambió!
@@ -98,11 +104,11 @@ function wait(ms) {
 
 const go = async () => {
     const res1 = await wait(600);
-    console.log(res1);
+    console.log('res1 ' + res1);
     const res2 = await wait(1000);
-    console.log(res2);
+    console.log('res2 ' + res2);
     const res3 = await wait(1400);
-    console.log(res3);
+    console.log('res3', res3);
 };
 go();
 
@@ -124,7 +130,7 @@ function wait(ms) {
 
 const go = async () => {
     try {
-        const res1 = await wait(600);
+        const res1 = wait(500);
         console.log(res1);
         const res2 = await wait(600);
         console.log(res2);

@@ -1,6 +1,10 @@
 var express = require('express')
 var app = express()
 var fs = require('fs')
+var bodyParser = require('body-parser')
+
+// Usamos middleware body-parser
+app.use(bodyParser.json())
 
 var users=[]
 
@@ -22,6 +26,23 @@ fs.readFile("user.json",{encoding: 'utf8'},(err,data)=>{
  */
 app.use('/users',(req,res)=>{
     res.send(users);
+});
+
+app.post('/user', (req, resp) => {
+    var user = req.body.user
+    
+    if(user.username !== undefined && user.username.length > 0) {
+        if(user.email !== undefined && user.email.length > 0) {
+
+            users.push(user);
+            resp.send(user);
+
+        } else {
+            resp.status(400).send('Invalid email field');
+        }
+    } else {
+        resp.status(400).send('Invalid username field');
+    }
 });
 
 /**
