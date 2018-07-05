@@ -1,0 +1,35 @@
+body{
+    border:0px;
+    margin: 0px;
+    background-color: lightgray;
+}
+
+nav{
+    background-color: rgb(28, 50, 138);
+    color:white;
+    padding: 10px;
+}
+
+nav h4{
+     margin:0px;
+     display: inline-block;
+}
+
+nav img{
+    float: right;
+    width: 30px;
+    border-radius: 100%;
+    margin-left: 10px;
+}
+
+nav p{
+    padding-top: 3px;
+    float: right;
+    margin: 0px;
+}
+
+.container{
+    padding: 16px;
+    width: 100%;
+    background-color: white;
+}
