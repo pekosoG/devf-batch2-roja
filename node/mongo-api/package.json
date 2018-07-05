@@ -4,12 +4,18 @@
   "description": "vamos a usar mongo con express y hacer cosas raras",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start-dev": "nodemon index.js"
   },
   "author": "PekosoG",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongoose": "^5.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }
