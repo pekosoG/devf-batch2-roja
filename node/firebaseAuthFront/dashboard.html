@@ -16,7 +16,22 @@
         <p id="user-name">Hola como estás!</p>
     </nav>
     <div class="container">
-        <div>SOMETHINGGGGGGG</div>
+        <div class="newPost centrado white-box">
+            <textarea rows="2" cols="10" id="newPostInput"></textarea>
+            <button class="btn-primary" onclick="postSomething()">Post!</button>
+        </div>
+    </div>
+    <div class="container" id="posts-container">
+        
+    </div>
+    <div class="post white-box" id="emptyPost" style="display:none">
+        <div class="post-head">
+            <img src="img/profile.png">
+            <h5>Hola como estás</h5>
+        </div>
+        <div class="post-body">
+            <h3>blablablabalbalbalbalbalbalblablablablalbalbalbalblablalbalbalbal</h3>
+        </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
     <script src="js/dashboard.js"></script>
