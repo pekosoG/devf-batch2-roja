@@ -9,6 +9,8 @@
   "author": "ramrodo",
   "license": "ISC",
   "dependencies": {
+    "apiai": "^4.0.3",
+    "dialogflow": "^0.5.0",
     "express": "^4.16.3",
     "messenger-bot": "^2.5.0"
   }
