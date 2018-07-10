@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import axios from "axios";
 
 import AppBar from "./components/AppBar";
 import Card from "./components/Card";
@@ -8,44 +8,56 @@ import imagePrincipito from "./images/principito.jpg";
 import imageFinanzas from "./images/finanzas.jpg";
 import imageReady from "./images/ready.jpg";
 
+import "./App.css";
+
 class App extends Component {
   state = {
     filtro: "",
+    libros: [],
   };
 
   filtro = event => {
     this.setState({ filtro: event.target.value });
   };
 
-  render() {
-    const libros = [
-      {
-        id: 1,
-        title: "Principito",
-        description: "Libro del Principito",
-        image: imagePrincipito,
-      },
-      {
-        id: 2,
-        title: "Finanzas",
-        description: "Libro de Finanzas",
-        image: imageFinanzas,
-      },
-      {
-        id: 3,
-        title: "Otro libro",
-        description: "Otro libro",
-        image: imageReady,
-      },
-      {
-        id: 4,
-        title: "Otro libro más",
-        description: "Otro libro",
-        image: imageReady,
-      },
-    ];
+  componentDidMount() {
+    axios.get("http://localhost:3000/book").then(res => {
+      const libros = res.data;
+      this.setState({ libros });
+    });
+  }
 
-    const { filtro } = this.state;
+  render() {
+    // const libros = [
+    //   {
+    //     id: 1,
+    //     title: "Principito",
+    //     description: "Libro del Principito",
+    //     image: imagePrincipito,
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "Finanzas",
+    //     description: "Libro de Finanzas",
+    //     image: imageFinanzas,
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "Otro libro",
+    //     description: "Otro libro",
+    //     image: imageReady,
+    //   },
+    //   {
+    //     id: 4,
+    //     title: "Otro libro más",
+    //     description: "Otro libro",
+    //     image: imageReady,
+    //   },
+    // ];
+
+    const { filtro, libros } = this.state;
+
+    console.log("libros", libros);
 
     const otroLibro = libros.filter(libro => {
       if (filtro.length === 0) {
@@ -66,7 +78,7 @@ class App extends Component {
             <Card
               key={libro.id}
               title={libro.title}
-              description={libro.description}
+              description={libro.desc}
               image={libro.image}
             />
           ))}
