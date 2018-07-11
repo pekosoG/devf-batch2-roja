@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { log } from "util";
 
 const styles = {
   card: {
@@ -19,16 +20,21 @@ const styles = {
 };
 
 function SimpleMediaCard(props) {
-  const { classes, title, description, image } = props;
+  const { classes, title, description, image, id, history } = props;
+    
+  const redirect = () =>{
+    history.push('/book/'+id);
+  }
+
   return (
     <div>
-      <Card  className={classes.card}>
+      <Card className={classes.card}>
         <CardMedia
           className={classes.media}
           image={image}
           title="Contemplative Reptile"
         />
-        <CardContent>
+        <CardContent onClick={()=>redirect()}>
           <Typography gutterBottom variant="headline" component="h2">
             {title}
           </Typography>

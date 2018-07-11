@@ -47,7 +47,9 @@ class App extends Component {
         <div className="flex">
           {otroLibro.map(libro => (
             <Card
+              history={this.props.history}
               key={libro._id}
+              id={libro._id}
               title={libro.title}
               description={libro.desc}
               image={libro.image}
