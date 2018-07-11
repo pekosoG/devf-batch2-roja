@@ -1,0 +1,17 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "A simple messenger chatbot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ramrodo",
+  "license": "ISC",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "dialogflow": "^0.5.0",
+    "express": "^4.16.3",
+    "messenger-bot": "^2.5.0"
+  }
+}
