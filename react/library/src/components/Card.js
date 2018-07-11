@@ -22,7 +22,7 @@ function SimpleMediaCard(props) {
   const { classes, title, description, image } = props;
   return (
     <div>
-      <Card className={classes.card}>
+      <Card  className={classes.card}>
         <CardMedia
           className={classes.media}
           image={image}
